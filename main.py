@@ -8,5 +8,15 @@ def wordcount(whole_book):
     number = len(words)
     print(number)
 
+def character_count(whole_book):
+    lower_words = whole_book.lower()
+    characters = {}
+    for char in lower_words:
+        characters[char] = characters.get(char, 0) +1
+    return characters
+
 book = main()
 wordcount(book)
+counts = character_count(book)
+for char, count in counts.items():
+    print(f"'{char}': {count}")
